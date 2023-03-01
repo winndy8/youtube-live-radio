@@ -1,11 +1,11 @@
 #! /bin/bash
 
-VBR="1000k"
+VBR="1500k"
 FPS="24"
-QUAL="fast"
+QUAL="superfast"
 
 YOUTUBE_URL="rtmp://a.rtmp.youtube.com/live2"
-KEY="513d-xphe-p2qt-v3w0-4bp3"
+KEY="bxts-x2xm-rjr6-ux74-2xys"
 
 VIDEO_SOURCE="bg.mp4"
 AUDIO_SOURCE="mp3/the-corner-in-the-town-121352-[AudioTrimmer.com].mp3"
