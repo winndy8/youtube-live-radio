@@ -8,7 +8,7 @@ YOUTUBE_URL="rtmp://a.rtmp.youtube.com/live2"
 KEY="513d-xphe-p2qt-v3w0-4bp3"
 
 VIDEO_SOURCE="bg.mp4"
-AUDIO_SOURCE="the-corner-in-the-town-121352-[AudioTrimmer.com].mp3"
+AUDIO_SOURCE="mp3/the-corner-in-the-town-121352-[AudioTrimmer.com].mp3"
 
 ffmpeg \
     -re -f lavfi -i "movie=filename=$VIDEO_SOURCE:loop=0, setpts=N/(FRAME_RATE*TB)" \
