@@ -7,7 +7,7 @@
 VBR="100k"                                    # Bitrate de la vidéo en sortie
 FPS="30"                                       # FPS de la vidéo en sortie
 QUAL="ultrafast"                                  # Preset de qualité FFMPEG
-YOUTUBE_URL="rtmp://x.rtmp.youtube.com/live2"  # URL de base RTMP youtube
+YOUTUBE_URL="rtmp://a.rtmp.youtube.com/live2"  # URL de base RTMP youtube
 
 SOURCE="video.mp4"              # Source UDP (voir les annonces SAP)
 KEY="513d-xphe-p2qt-v3w0-4bp3"                                     # Clé à récupérer sur l'event youtube
