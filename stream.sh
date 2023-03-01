@@ -5,7 +5,7 @@ FPS="24"
 QUAL="superfast"
 
 YOUTUBE_URL="rtmp://a.rtmp.youtube.com/live2"
-KEY="bxts-x2xm-rjr6-ux74-2xys"
+KEY="513d-xphe-p2qt-v3w0-4bp3"
 
 VIDEO_SOURCE="bg.mp4"
 AUDIO_SOURCE="mp3/the-corner-in-the-town-121352-[AudioTrimmer.com].mp3"
