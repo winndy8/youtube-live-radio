@@ -1,8 +1,8 @@
 #! /bin/bash
 
-VBR="800k"
+VBR="1000k"
 FPS="24"
-QUAL="superfast"
+QUAL="fast"
 
 YOUTUBE_URL="rtmp://a.rtmp.youtube.com/live2"
 KEY="513d-xphe-p2qt-v3w0-4bp3"
