@@ -1,19 +1,19 @@
 #! /bin/bash
+#
+# Diffusion youtube avec ffmpeg
 
-VBR="1000k"
-FPS="24"
-QUAL="superfast"
+# Configurer youtube avec une résolution 720p. La vidéo n'est pas scalée.
 
-YOUTUBE_URL="rtmp://a.rtmp.youtube.com/live2"
-KEY="513d-xphe-p2qt-v3w0-4bp3"
+VBR="100k"                                    # Bitrate de la vidéo en sortie
+FPS="30"                                       # FPS de la vidéo en sortie
+QUAL="ultrafast"                                  # Preset de qualité FFMPEG
+YOUTUBE_URL="rtmp://x.rtmp.youtube.com/live2"  # URL de base RTMP youtube
 
-VIDEO_SOURCE="bg.mp4"
-AUDIO_SOURCE="mp3/the-corner-in-the-town-121352-[AudioTrimmer.com].mp3"
+SOURCE="video.mp4"              # Source UDP (voir les annonces SAP)
+KEY="513d-xphe-p2qt-v3w0-4bp3"                                     # Clé à récupérer sur l'event youtube
 
-  ffmpeg -loglevel info -y -re \
-    -f image2 -loop 1 -i bg.mp4 \
-    -f concat -safe 0 -i <((for f in ./mp3/*.mp3; do path="$PWD/$f"; echo "file ${path@Q}"; done) | shuf) \
-    -c:v libx264 -preset veryfast -b:v 3000k -maxrate 3000k -bufsize 6000k \
-    -framerate 25 -video_size 1280x720 -vf "format=yuv420p" -g 50 -shortest -strict experimental \
-    -c:a aac -b:a 128k -ar 44100 \
-    -f flv rtmp://a.rtmp.youtube.com/live2/513d-xphe-p2qt-v3w0-4bp3
+ffmpeg \
+    -stream_loop -1 -i "$SOURCE" -deinterlace \
+    -vcodec libx264 -pix_fmt yuv420p -preset $QUAL -r $FPS -g $(($FPS * 2)) -b:v $VBR \
+    -acodec libmp3lame -ar 44100 -threads 6 -qscale 3 -b:a 712000 -bufsize 512k \
+    -f flv "$YOUTUBE_URL/$KEY"
