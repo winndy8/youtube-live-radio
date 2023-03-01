@@ -1,6 +1,6 @@
 #! /bin/bash
 
-VBR="1500k"
+VBR="1000k"
 FPS="24"
 QUAL="superfast"
 
