@@ -1,16 +1,13 @@
 #! /bin/bash
-#
-# Diffusion youtube avec ffmpeg
 
-# Configurer youtube avec une résolution 720p. La vidéo n'est pas scalée.
+VBR="1500k"
+FPS="24"
+QUAL="superfast"
 
-VBR="100k"                                    # Bitrate de la vidéo en sortie
-FPS="30"                                       # FPS de la vidéo en sortie
-QUAL="ultrafast"                                  # Preset de qualité FFMPEG
-YOUTUBE_URL="rtmp://a.rtmp.youtube.com/live2"  # URL de base RTMP youtube
+YOUTUBE_URL="rtmp://a.rtmp.youtube.com/live2"
+KEY="z5k3-8888-69qu-9999"
 
-SOURCE="video.mp4"              # Source UDP (voir les annonces SAP)
-KEY="513d-xphe-p2qt-v3w0-4bp3"                                     # Clé à récupérer sur l'event youtube
+SOURCE="video.mp4"
 
 ffmpeg \
     -stream_loop -1 -i "$SOURCE" -deinterlace \
